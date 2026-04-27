@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { posts } from '../../data'
+import { PostPage } from '../../page-components/PostPage'
+
+export function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+const keywords = [
+  'Cubadata',
+  'Cuba',
+  post.category === 'encuestas' ? 'encuesta' : 'estudio',
+  'opinión pública',
+  ...post.title
+    .split(/\s+/)
+    .map((word) => word.replace(/[^\p{L}\p{N}]/gu, ''))
+    .filter((word) => word.length > 5)
+    .slice(0, 6),
+]
+---
+
+<BaseLayout
+  title={`${post.title} - Cubadata`}
+  description={post.body?.[0] ?? post.excerpt}
+  keywords={keywords}
+  image={post.image}
+  canonicalPath={`/item/${post.slug}`}
+  activePage={`/${post.category}`}
+  type="article"
+>
+  <PostPage post={post} />
+</BaseLayout>

@@ -1,0 +1,83 @@
+---
+import '../index.css'
+import '../App.css'
+import { Footer } from '../components/Footer'
+import { Header } from '../components/Header'
+
+type Props = {
+  title: string
+  description: string
+  keywords?: string[]
+  image?: string
+  canonicalPath?: string
+  activePage?: string
+  type?: 'website' | 'article'
+}
+
+const {
+  title,
+  description,
+  keywords = [],
+  image = '/images/logo/circle-large.png',
+  canonicalPath = Astro.url.pathname,
+  activePage = Astro.url.pathname.replace(/\/$/, '') || '/',
+  type = 'website',
+} = Astro.props
+
+const site = Astro.site ?? new URL('https://cubadata.com')
+const canonical = new URL(canonicalPath, site).toString()
+const imageUrl = new URL(image, site).toString()
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/images/logo/circle.png" />
+    <link rel="canonical" href={canonical} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Cubadata" />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:secure_url" content={imageUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': type === 'article' ? 'Article' : 'WebPage',
+        name: title,
+        description,
+        url: canonical,
+        image: imageUrl,
+        publisher: {
+          '@type': 'Organization',
+          name: 'Cubadata',
+          logo: new URL('/images/logo/color.png', site).toString(),
+        },
+      })}
+    />
+  </head>
+  <body>
+    <div class="site-shell">
+      <Header activePage={activePage} client:load />
+      <slot />
+      <Footer />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { NotFoundPage } from '../page-components/NotFoundPage'
+---
+
+<BaseLayout
+  title="Página no encontrada - Cubadata"
+  description="La página solicitada no existe en esta versión estática de Cubadata."
+  keywords={['Cubadata', '404']}
+  canonicalPath="/404"
+>
+  <NotFoundPage />
+</BaseLayout>

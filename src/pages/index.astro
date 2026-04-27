@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { HomePage } from '../page-components/HomePage'
+
+const description =
+  'En Cubadata generamos datos, información y análisis de la realidad cubana a partir de la realización de encuestas digitales.'
+---
+
+<BaseLayout
+  title="Cubadata | Cuba cambia, nosotros te mostramos cómo"
+  description={description}
+  keywords={['Cubadata', 'Cuba', 'encuestas digitales', 'opinión pública', 'estudios de mercado']}
+  image="/images/page/home/hero.png"
+  canonicalPath="/"
+  activePage="/"
+>
+  <HomePage client:load />
+</BaseLayout>

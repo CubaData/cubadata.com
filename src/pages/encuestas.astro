@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { ArchivePage } from '../page-components/ArchivePage'
+
+const description = 'Encuestas públicas de Cubadata sobre la realidad social, económica y política de Cuba.'
+---
+
+<BaseLayout
+  title="Encuestas - Cubadata"
+  description={description}
+  keywords={['Cubadata', 'encuestas', 'Cuba', 'opinión pública', 'datos']}
+  image="/images/post/condiciones-card.jpg"
+  canonicalPath="/encuestas"
+  activePage="/encuestas"
+>
+  <ArchivePage category="encuestas" />
+</BaseLayout>

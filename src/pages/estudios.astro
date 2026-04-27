@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { ArchivePage } from '../page-components/ArchivePage'
+
+const description = 'Estudios y análisis públicos de Cubadata sobre Cuba y su realidad social.'
+---
+
+<BaseLayout
+  title="Estudios - Cubadata"
+  description={description}
+  keywords={['Cubadata', 'estudios', 'análisis', 'Cuba', 'investigación']}
+  image="/images/post/miedo-card.jpg"
+  canonicalPath="/estudios"
+  activePage="/estudios"
+>
+  <ArchivePage category="estudios" />
+</BaseLayout>
