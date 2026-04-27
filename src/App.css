@@ -660,6 +660,52 @@
   width: 100%;
 }
 
+.survey-summary,
+.study-meta {
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  color: #555;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 24px 0;
+  padding: 14px 0;
+}
+
+.survey-summary span,
+.study-label {
+  color: var(--menu-hover);
+  font-family: 'Cubadata Menu Sora', 'Sora', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.survey-summary strong,
+.study-meta span {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.study-label {
+  margin-bottom: 14px;
+}
+
+.study-meta {
+  margin-top: 0;
+}
+
+.study-intro {
+  background: var(--light);
+  border-left: 4px solid var(--menu-hover);
+  color: #333;
+  font-size: 20px;
+  line-height: 1.7;
+  margin: 0 0 28px;
+  padding: 22px 26px;
+}
+
 .about-grid {
   align-items: center;
   display: grid;

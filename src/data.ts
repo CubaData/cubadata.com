@@ -1,9 +1,8 @@
 export type Category = 'encuestas' | 'estudios'
 
-export type Post = {
+type PublicationBase = {
   slug: string
   title: string
-  category: Category
   author?: string
   date: string
   excerpt: string
@@ -12,7 +11,20 @@ export type Post = {
   body?: string[]
 }
 
-export const posts: Post[] = [
+export type Encuesta = PublicationBase & {
+  category: 'encuestas'
+  sampleSize?: string
+  fieldwork?: string
+}
+
+export type Estudio = PublicationBase & {
+  category: 'estudios'
+  researchType?: string
+}
+
+export type Publication = Encuesta | Estudio
+
+export const encuestas: Encuesta[] = [
   {
     slug: 'condiciones-de-vida-servicios-seguridad-y-ajuste-cotidiano',
     title: 'Condiciones de vida, servicios, seguridad y ajuste cotidiano',
@@ -72,6 +84,9 @@ export const posts: Post[] = [
     excerpt: 'Segunda económica trimestral Cuba 2023',
     image: '/images/post/segunda-economia.jpg',
   },
+]
+
+export const estudios: Estudio[] = [
   {
     slug: '2025-disidencia-en-cuba',
     title:
@@ -129,6 +144,8 @@ export const posts: Post[] = [
     image: '/images/post/genero.jpg',
   },
 ]
+
+export const allPublications: Publication[] = [...encuestas, ...estudios]
 
 export const pressItems = [
   {

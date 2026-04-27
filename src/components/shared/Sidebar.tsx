@@ -1,8 +1,9 @@
-import { posts } from '../data'
-import type { Navigate } from '../types'
+import { allPublications } from '../../data'
+import type { Navigate } from '../../types'
+import { publicationPath } from '../../utils/publicationPath'
 import { AppLink } from './AppLink'
 
-const latestPosts = posts.slice(0, 5)
+const latestPosts = allPublications.slice(0, 5)
 
 type SidebarProps = {
   onNavigate?: Navigate
@@ -16,7 +17,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
         <article key={post.slug}>
           <img src={post.image} alt="" />
           <h3>
-            <AppLink href={`/item/${post.slug}`} onNavigate={onNavigate}>
+            <AppLink href={publicationPath(post)} onNavigate={onNavigate}>
               {post.title}
             </AppLink>
           </h3>

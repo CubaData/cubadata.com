@@ -1,12 +1,12 @@
-import type { Post } from '../data'
-import type { Navigate } from '../types'
+import type { Publication } from '../../data'
+import type { Navigate } from '../../types'
 import { PostCard } from './PostCard'
 import { SectionTitle } from './SectionTitle'
 
 type PostShowcaseProps = {
   eyebrow: string
   onNavigate?: Navigate
-  posts: Post[]
+  posts: Publication[]
   title: string
 }
 

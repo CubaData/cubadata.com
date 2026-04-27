@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { encuestas } from '../../data'
+import { EncuestaPage } from '../../components/pages/EncuestaPage'
+
+export function getStaticPaths() {
+  return encuestas.map((encuesta) => ({
+    params: { slug: encuesta.slug },
+    props: { encuesta },
+  }))
+}
+
+const { encuesta } = Astro.props
+const keywords = [
+  'Cubadata',
+  'Cuba',
+  'encuesta',
+  'opinión pública',
+  ...encuesta.title
+    .split(/\s+/)
+    .map((word) => word.replace(/[^\p{L}\p{N}]/gu, ''))
+    .filter((word) => word.length > 5)
+    .slice(0, 6),
+]
+---
+
+<BaseLayout
+  title={`${encuesta.title} - Cubadata`}
+  description={encuesta.body?.[0] ?? encuesta.excerpt}
+  keywords={keywords}
+  image={encuesta.image}
+  canonicalPath={`/encuestas/${encuesta.slug}`}
+  activePage="/encuestas"
+  type="article"
+>
+  <EncuestaPage slug={encuesta.slug} />
+</BaseLayout>

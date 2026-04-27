@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState, type CSSProperties, type MouseEvent } from 'react'
-import { posts, pressItems } from '../data'
-import type { Navigate } from '../types'
-import { AppLink } from '../components/AppLink'
-import { PostShowcase } from '../components/PostShowcase'
-import { SectionTitle } from '../components/SectionTitle'
-import { ServiceCard } from '../components/ServiceCard'
-import { loadScript } from '../utils/loadScript'
+import { encuestas, estudios, pressItems } from '../../data'
+import type { Navigate } from '../../types'
+import { AppLink } from '../shared/AppLink'
+import { PostShowcase } from '../shared/PostShowcase'
+import { SectionTitle } from '../shared/SectionTitle'
+import { ServiceCard } from '../shared/ServiceCard'
+import { loadScript } from '../../utils/loadScript'
 
 declare global {
   interface Window {
@@ -21,8 +21,8 @@ type HomePageProps = {
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
-  const encuestaPosts = posts.filter((post) => post.category === 'encuestas').slice(0, 6)
-  const estudioPosts = posts.filter((post) => post.category === 'estudios').slice(0, 6)
+  const encuestaPosts = encuestas.slice(0, 6)
+  const estudioPosts = estudios.slice(0, 6)
   const heroRef = useRef<HTMLElement>(null)
   const [heroOffset, setHeroOffset] = useState({ x: 0, y: 0 })
   const heroStyle = {

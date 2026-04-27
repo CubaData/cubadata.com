@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import type { Navigate } from '../types'
+import type { Navigate } from '../../types'
 
 type AppLinkProps = {
   children: ReactNode

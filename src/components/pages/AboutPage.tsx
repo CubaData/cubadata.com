@@ -1,5 +1,5 @@
-import { advisors } from '../data'
-import { SectionTitle } from '../components/SectionTitle'
+import { advisors } from '../../data'
+import { SectionTitle } from '../shared/SectionTitle'
 
 export function AboutPage() {
   return (

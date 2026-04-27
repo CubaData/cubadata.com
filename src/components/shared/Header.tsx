@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { Navigate } from '../types'
+import type { Navigate } from '../../types'
 import { AppLink } from './AppLink'
 
 const navItems = [

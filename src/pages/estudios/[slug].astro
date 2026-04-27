@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { estudios } from '../../data'
+import { EstudioPage } from '../../components/pages/EstudioPage'
+
+export function getStaticPaths() {
+  return estudios.map((estudio) => ({
+    params: { slug: estudio.slug },
+    props: { estudio },
+  }))
+}
+
+const { estudio } = Astro.props
+const keywords = [
+  'Cubadata',
+  'Cuba',
+  'estudio',
+  'análisis',
+  ...estudio.title
+    .split(/\s+/)
+    .map((word) => word.replace(/[^\p{L}\p{N}]/gu, ''))
+    .filter((word) => word.length > 5)
+    .slice(0, 6),
+]
+---
+
+<BaseLayout
+  title={`${estudio.title} - Cubadata`}
+  description={estudio.body?.[0] ?? estudio.excerpt}
+  keywords={keywords}
+  image={estudio.image}
+  canonicalPath={`/estudios/${estudio.slug}`}
+  activePage="/estudios"
+  type="article"
+>
+  <EstudioPage slug={estudio.slug} />
+</BaseLayout>
