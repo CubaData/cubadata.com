@@ -1,6 +1,4 @@
-export type Category = 'encuestas' | 'estudios'
-
-type PublicationBase = {
+export type Encuesta = {
   slug: string
   title: string
   author?: string
@@ -9,16 +7,19 @@ type PublicationBase = {
   image: string
   cover?: string
   body?: string[]
-}
-
-export type Encuesta = PublicationBase & {
-  category: 'encuestas'
   sampleSize?: string
   fieldwork?: string
 }
 
-export type Estudio = PublicationBase & {
-  category: 'estudios'
+export type Estudio = {
+  slug: string
+  title: string
+  author?: string
+  date: string
+  excerpt: string
+  image: string
+  cover?: string
+  body?: string[]
   researchType?: string
 }
 
@@ -28,11 +29,9 @@ export const encuestas: Encuesta[] = [
   {
     slug: 'condiciones-de-vida-servicios-seguridad-y-ajuste-cotidiano',
     title: 'Condiciones de vida, servicios, seguridad y ajuste cotidiano',
-    category: 'encuestas',
     author: 'salvi',
     date: '15 de abril de 2026',
-    excerpt:
-      'Esta encuesta se realizó a una muestra de 1,788 personas localizadas a través de todo el territorio geográfico de Cuba desde el 23 de febrero de 2026 al 13 de marzo del 2026.',
+    excerpt: 'Esta encuesta se realizó a una muestra de 1,788 personas localizadas a través de todo el territorio geográfico de Cuba desde el 23 de febrero de 2026 al 13 de marzo del 2026.',
     image: '/images/post/condiciones-card.jpg',
     cover: '/images/post/condiciones-cover.png',
     body: [
@@ -43,27 +42,22 @@ export const encuestas: Encuesta[] = [
   {
     slug: 'futuro-en-cuba-y-experiencia-con-venezuela',
     title: 'Horizontes de futuro en Cuba y experiencia comparada con Venezuela',
-    category: 'encuestas',
     author: 'salvi',
     date: '21 de febrero de 2026',
-    excerpt:
-      'Esta encuesta se realizó a una muestra de 2,138 personas localizadas a través de todo el territorio geográfico de Cuba desde el 15 de enero de 2026.',
+    excerpt: 'Esta encuesta se realizó a una muestra de 2,138 personas localizadas a través de todo el territorio geográfico de Cuba desde el 15 de enero de 2026.',
     image: '/images/post/futuro-card.jpg',
   },
   {
     slug: 'encuestas-del-segundo-panel-multidimensional',
     title: 'Encuestas del segundo panel multidimensional 2023-2024',
-    category: 'encuestas',
     author: 'Cubadata',
     date: '2 de septiembre de 2024',
-    excerpt:
-      'El segundo panel de Cubadata proporciona una visión multidimensional de 360°, lo que permite visualizar cómo se interrelacionan diversos aspectos personales, sociales, económicos, políticos y culturales.',
+    excerpt: 'El segundo panel de Cubadata proporciona una visión multidimensional de 360°, lo que permite visualizar cómo se interrelacionan diversos aspectos personales, sociales, económicos, políticos y culturales.',
     image: '/images/post/segundo-panel-card.jpg',
   },
   {
     slug: 'encuesta-sobre-protestas-civiles-en-cuba',
     title: 'Encuesta sobre protestas civiles en Cuba',
-    category: 'encuestas',
     date: '25 de abril de 2024',
     excerpt: 'Encuesta sobre protestas civiles en Cuba.',
     image: '/images/post/protestas.jpg',
@@ -71,7 +65,6 @@ export const encuestas: Encuesta[] = [
   {
     slug: 'tercera-encuesta-economica-trimestral-2023',
     title: 'Tercera encuesta económica trimestral (2023)',
-    category: 'encuestas',
     date: '6 de diciembre de 2023',
     excerpt: 'Tercera encuesta económica trimestral (2023)',
     image: '/images/post/tercera-economia.jpg',
@@ -79,7 +72,6 @@ export const encuestas: Encuesta[] = [
   {
     slug: 'segunda-encuesta-economica-trimestral-2023',
     title: 'Segunda encuesta económica trimestral (2023)',
-    category: 'encuestas',
     date: '7 de agosto de 2023',
     excerpt: 'Segunda económica trimestral Cuba 2023',
     image: '/images/post/segunda-economia.jpg',
@@ -89,39 +81,31 @@ export const encuestas: Encuesta[] = [
 export const estudios: Estudio[] = [
   {
     slug: '2025-disidencia-en-cuba',
-    title:
-      'Más allá del miedo: ¿Qué está cambiando cuando nada parece cambiar? Un estudio de 360° sobre la disidencia latente en Cuba.',
-    category: 'estudios',
+    title: 'Más allá del miedo: ¿Qué está cambiando cuando nada parece cambiar? Un estudio de 360° sobre la disidencia latente en Cuba.',
     author: 'Cubadata',
     date: '3 de noviembre de 2025',
-    excerpt:
-      'Este estudio analiza los resultados de cinco encuestas realizadas por Cubadata entre septiembre de 2024 y enero de 2025, con una muestra panel de 1,658 personas.',
+    excerpt: 'Este estudio analiza los resultados de cinco encuestas realizadas por Cubadata entre septiembre de 2024 y enero de 2025, con una muestra panel de 1,658 personas.',
     image: '/images/post/miedo-card.jpg',
   },
   {
     slug: 'segundo-panel-multidimensional',
     title: 'Explorando futuros posibles para la democratización en Cuba. Segundo panel multidimensional',
-    category: 'estudios',
     author: 'Cubadata',
     date: '2 de septiembre de 2024',
-    excerpt:
-      'El segundo panel de Cubadata proporciona una visión multidimensional de 360°, lo que permite visualizar cómo se interrelacionan diversos aspectos personales, sociales, económicos, políticos y culturales.',
+    excerpt: 'El segundo panel de Cubadata proporciona una visión multidimensional de 360°, lo que permite visualizar cómo se interrelacionan diversos aspectos personales, sociales, económicos, políticos y culturales.',
     image: '/images/post/segundo-panel-card.jpg',
   },
   {
     slug: 'igualdad-de-genero-y-participacion-politica-de-las-mujeres-en-cuba',
     title: 'Igualdad de género y participación política de las mujeres en Cuba: desafíos y realidades ocultas',
-    category: 'estudios',
     author: 'Cubadata',
     date: '31 de julio de 2023',
-    excerpt:
-      'Estudio: Igualdad de género y participación política de las mujeres en Cuba: desafíos y realidades ocultas',
+    excerpt: 'Estudio: Igualdad de género y participación política de las mujeres en Cuba: desafíos y realidades ocultas',
     image: '/images/post/genero.jpg',
   },
   {
     slug: 'politica-derechos-y-calidad-de-vida-en-cuba',
     title: 'Política, derechos y calidad de vida en Cuba: Primer panel multimensional 2022',
-    category: 'estudios',
     date: '28 de junio de 2023',
     excerpt: 'Política, derechos y calidad de vida en Cuba Primer panel multimensional 2022',
     image: '/images/post/segundo-panel-card.jpg',
@@ -129,7 +113,6 @@ export const estudios: Estudio[] = [
   {
     slug: 'el-rol-de-la-economia-informal-en-la-mitigacion-de-la-inseguridad-alimentaria-en-cuba',
     title: 'El rol de la economía informal en la mitigación de la inseguridad alimentaria en Cuba',
-    category: 'estudios',
     date: '15 de mayo de 2023',
     excerpt: 'El rol de la economía informal en la mitigación de la inseguridad alimentaria en Cuba',
     image: '/images/post/miedo-card.jpg',
@@ -137,17 +120,18 @@ export const estudios: Estudio[] = [
   {
     slug: 'que-hay-detras-de-la-intencion-de-voto-del-electorado-cubano',
     title: '¿Qué hay detrás de la intención de voto del electorado cubano?',
-    category: 'estudios',
     date: '7 de abril de 2023',
-    excerpt:
-      'Los motivos por los cuales los cubanos y cubanas podrían votar en las elecciones de su país varían según sus percepciones y experiencias políticas.',
+    excerpt: 'Los motivos por los cuales los cubanos y cubanas podrían votar en las elecciones de su país varían según sus percepciones y experiencias políticas.',
     image: '/images/post/genero.jpg',
   },
 ]
 
-export const allPublications: Publication[] = [...encuestas, ...estudios]
+export const latestPublications: Array<{ publication: Publication; href: string }> = [
+  ...encuestas.map((publication) => ({ publication, href: `/encuestas/${publication.slug}` })),
+  ...estudios.map((publication) => ({ publication, href: `/estudios/${publication.slug}` })),
+]
 
-export const pressItems = [
+export const press = [
   {
     title: 'Comida, corriente y libertad: la protesta ciudadana se reactiva en Cuba',
     outlet: 'El País',

@@ -1,16 +1,14 @@
 import type { Publication } from '../../data'
 import type { Navigate } from '../../types'
-import { publicationPath } from '../../utils/publicationPath'
 import { AppLink } from './AppLink'
 
 type PostCardProps = {
+  href: string
   post: Publication
   onNavigate?: Navigate
 }
 
-export function PostCard({ post, onNavigate }: PostCardProps) {
-  const href = publicationPath(post)
-
+export function PostCard({ href, post, onNavigate }: PostCardProps) {
   return (
     <article className="post-card">
       <AppLink className="post-image" href={href} onNavigate={onNavigate}>

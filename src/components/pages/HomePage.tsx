@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type MouseEvent } from 'react'
-import { encuestas, estudios, pressItems } from '../../data'
+import { encuestas, estudios, press } from '../../data'
 import type { Navigate } from '../../types'
 import { AppLink } from '../shared/AppLink'
 import { PostShowcase } from '../shared/PostShowcase'
@@ -128,6 +128,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       <PostShowcase
         eyebrow="Encuestas públicas"
+        hrefBase="/encuestas"
         title="Encuestas públicas de Cubadata"
         posts={encuestaPosts}
         onNavigate={onNavigate}
@@ -135,6 +136,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       <PostShowcase
         eyebrow="Estudios y análisis"
+        hrefBase="/estudios"
         title="Estudios y análisis públicos"
         posts={estudioPosts}
         onNavigate={onNavigate}
@@ -222,7 +224,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           title="Aportamos a periodistas y comunicadores instrumentos para medir la temperatura social y política en Cuba."
         />
         <div className="press-grid">
-          {pressItems.map((item) => (
+          {press.map((item) => (
             <a className="press-card" href={item.url} key={item.title} target="_blank" rel="noreferrer">
               <img src={item.image} alt="" />
               <h3>{item.title}</h3>
