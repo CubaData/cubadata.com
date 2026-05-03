@@ -1,4 +1,4 @@
-import { encuestas } from '../../data'
+import { getEncuestas } from '../../data'
 import type { Navigate } from '../../types'
 import { AppLink } from '../shared/AppLink'
 import { Sidebar } from '../shared/Sidebar'
@@ -14,7 +14,7 @@ export function EncuestasPage({ onNavigate }: EncuestasPageProps) {
         <section>
           <h1 className="archive-title">Encuestas</h1>
           <div className="archive-list">
-            {encuestas.map((encuesta) => (
+            {getEncuestas().map((encuesta) => (
               <article className="archive-item encuesta-archive-item" key={encuesta.slug}>
                 <AppLink className="archive-thumb" href={`/encuestas/${encuesta.slug}`} onNavigate={onNavigate}>
                   <img src={encuesta.image} alt="" />
@@ -26,8 +26,7 @@ export function EncuestasPage({ onNavigate }: EncuestasPageProps) {
                     </AppLink>
                   </h2>
                   <p className="meta">
-                    {encuesta.author ? `${encuesta.author} - ` : ''}
-                    {encuesta.date}
+                    {encuesta.start_date} - {encuesta.end_date}
                   </p>
                   <p>{encuesta.excerpt}</p>
                 </div>

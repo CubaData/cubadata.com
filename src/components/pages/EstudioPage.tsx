@@ -1,4 +1,4 @@
-import { estudios } from '../../data'
+import { getEstudioBySlug } from '../../data'
 import type { Navigate } from '../../types'
 import { Sidebar } from '../shared/Sidebar'
 
@@ -8,7 +8,7 @@ type EstudioPageProps = {
 }
 
 export function EstudioPage({ slug, onNavigate }: EstudioPageProps) {
-  const estudio = estudios.find((item) => item.slug === slug)
+  const estudio = getEstudioBySlug(slug)
 
   if (!estudio) return null
 

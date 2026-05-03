@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { encuestas } from '../../data'
+import { getEncuestas } from '../../data'
 import { EncuestaPage } from '../../components/pages/EncuestaPage'
 
 export function getStaticPaths() {
-  return encuestas.map((encuesta) => ({
+  return getEncuestas().map((encuesta) => ({
     params: { slug: encuesta.slug },
     props: { encuesta },
   }))

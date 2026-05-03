@@ -1,10 +1,10 @@
-import type { Publication } from '../../data'
+import type { Encuesta, Estudio } from '../../data'
 import type { Navigate } from '../../types'
 import { AppLink } from './AppLink'
 
 type PostCardProps = {
   href: string
-  post: Publication
+  post: Encuesta | Estudio
   onNavigate?: Navigate
 }
 

@@ -1,0 +1,39 @@
+gsheet: https://docs.google.com/spreadsheets/d/1x6XuhEQXWJEk1uz0iOmnH5J8Skndd2nmM8kqdiRPD-I
+tabs:
+- gid: 0
+  export: encuestas.json
+  fields:
+  - slug: string
+  - title: string
+  - serie: string
+  - start_date: date
+  - end_date: date
+  - questions: int
+  - responses: int
+  - pdf: url
+  - image: url
+  - keywords: list
+  - excerpt: string
+  - summary: string
+- gid: 614182962
+  export: estudios.json
+  fields:
+  - slug: string
+  - date: date
+  - title: string
+  - serie: string
+  - isbn: string
+  - authors: list
+  - pdf: url
+  - image: url
+  - keywords: list
+  - excerpt: string
+  - summary: string
+- gid: 2028291692
+  export: series.json
+  fields:
+  - slug: string
+  - title: string
+  - keywords: list
+  - excerpt: string
+  - summary: string

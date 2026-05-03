@@ -1,8 +1,8 @@
-import { latestPublications } from '../../data'
+import { getEncuestas } from '../../data'
 import type { Navigate } from '../../types'
 import { AppLink } from './AppLink'
 
-const latestPosts = latestPublications.slice(0, 5)
+const latestPosts = getEncuestas().slice(0, 3)
 
 type SidebarProps = {
   onNavigate?: Navigate
@@ -12,16 +12,16 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   return (
     <aside className="sidebar">
       <h2>Últimas publicaciones</h2>
-      {latestPosts.map(({ href, publication }) => (
-        <article key={publication.slug}>
-          <img src={publication.image} alt="" />
+      {latestPosts.map(({ slug, image, title, start_date, excerpt, pdf }) => (
+        <article key={slug}>
+          <img src={image} alt="" />
           <h3>
-            <AppLink href={href} onNavigate={onNavigate}>
-              {publication.title}
+            <AppLink href={pdf} onNavigate={onNavigate}>
+              {title}
             </AppLink>
           </h3>
-          <time>{publication.date} [0]</time>
-          <p>{publication.excerpt}</p>
+          <time>{start_date}</time>
+          <p>{excerpt}</p>
         </article>
       ))}
     </aside>

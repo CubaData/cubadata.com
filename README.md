@@ -35,3 +35,17 @@ In instance, to add a new survey, add a new object to the `encuestas` array.
 The route `/encuestas/mi-nuevo-post` is generated automatically during `npm run build`.
 
 To add a new study, add a new object to the `estudios` array. The generated route will be `/estudios/{slug}`.
+
+## Data
+
+To rebuild the data JSONs from the spreadsheet
+
+https://docs.google.com/spreadsheets/d/1x6XuhEQXWJEk1uz0iOmnH5J8Skndd2nmM8kqdiRPD-I
+
+Run the phyton build script
+
+```
+py src/data/build.py
+```
+
+The data will be added to the folder `src/data/`.

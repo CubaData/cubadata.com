@@ -1,5 +1,6 @@
-import { encuestas } from '../../data'
+import { getEncuestaBySlug } from '../../data'
 import type { Navigate } from '../../types'
+import { AppLink } from '../shared/AppLink'
 import { Sidebar } from '../shared/Sidebar'
 
 type EncuestaPageProps = {
@@ -8,27 +9,38 @@ type EncuestaPageProps = {
 }
 
 export function EncuestaPage({ slug, onNavigate }: EncuestaPageProps) {
-  const encuesta = encuestas.find((item) => item.slug === slug)
+  const encuesta = getEncuestaBySlug(slug)
 
   if (!encuesta) return null
-
+  
   return (
     <main className="post-page survey-page">
       <div className="container two-column">
         <article className="single-post survey-post">
-          <time>{encuesta.date}</time>
           <h1>{encuesta.title}</h1>
+
           <div className="share">Compartir</div>
+
           <div className="survey-summary">
-            <span>Encuesta pública</span>
-            {encuesta.sampleSize && <strong>Muestra: {encuesta.sampleSize}</strong>}
-            {encuesta.fieldwork && <strong>Campo: {encuesta.fieldwork}</strong>}
+            <p>Muestra: {encuesta.responses}</p>
+            <p>Preguntas: {encuesta.questions}</p>
           </div>
-          {encuesta.cover && <img className="single-cover" src={encuesta.cover} alt="" />}
-          {(encuesta.body ?? [encuesta.excerpt]).map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+
+          <p>Fechas: {encuesta.start_date} al {encuesta.end_date}</p>
+
+          <div>
+            <img className="single-cover" src={encuesta.image} alt="" />
+
+            {encuesta.summary.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </div>
+
+          <AppLink className="hero-button primary" href={encuesta.pdf} onNavigate={onNavigate}>
+            Descargar PDF
+          </AppLink>
         </article>
+
         <Sidebar onNavigate={onNavigate} />
       </div>
     </main>

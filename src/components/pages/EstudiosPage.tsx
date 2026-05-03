@@ -1,4 +1,4 @@
-import { estudios } from '../../data'
+import { getEstudios } from '../../data'
 import type { Navigate } from '../../types'
 import { AppLink } from '../shared/AppLink'
 import { Sidebar } from '../shared/Sidebar'
@@ -14,7 +14,7 @@ export function EstudiosPage({ onNavigate }: EstudiosPageProps) {
         <section>
           <h1 className="archive-title">Estudios</h1>
           <div className="archive-list estudios-list">
-            {estudios.map((estudio) => (
+            {getEstudios().map((estudio) => (
               <article className="archive-item estudio-archive-item" key={estudio.slug}>
                 <AppLink className="archive-thumb" href={`/estudios/${estudio.slug}`} onNavigate={onNavigate}>
                   <img src={estudio.image} alt="" />

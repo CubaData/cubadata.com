@@ -1,4 +1,4 @@
-import { advisors } from '../../data'
+import { advisors } from '../../data/siteContent'
 import { SectionTitle } from '../shared/SectionTitle'
 
 export function AboutPage() {

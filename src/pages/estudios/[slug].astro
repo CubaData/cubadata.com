@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { estudios } from '../../data'
+import { getEstudios } from '../../data'
 import { EstudioPage } from '../../components/pages/EstudioPage'
 
 export function getStaticPaths() {
-  return estudios.map((estudio) => ({
+  return getEstudios().map((estudio) => ({
     params: { slug: estudio.slug },
     props: { estudio },
   }))

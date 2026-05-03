@@ -1,4 +1,4 @@
-import type { Publication } from '../../data'
+import type { Encuesta, Estudio } from '../../data'
 import type { Navigate } from '../../types'
 import { PostCard } from './PostCard'
 import { SectionTitle } from './SectionTitle'
@@ -7,7 +7,7 @@ type PostShowcaseProps = {
   hrefBase: string
   eyebrow: string
   onNavigate?: Navigate
-  posts: Publication[]
+  posts: Array<Encuesta | Estudio>
   title: string
 }
 

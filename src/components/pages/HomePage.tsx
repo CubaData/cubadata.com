@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties, type MouseEvent } from 'react'
-import { encuestas, estudios, press } from '../../data'
+import { getEncuestas, getEstudios } from '../../data'
+import { press } from '../../data/siteContent'
 import type { Navigate } from '../../types'
 import { AppLink } from '../shared/AppLink'
 import { PostShowcase } from '../shared/PostShowcase'
@@ -21,8 +22,8 @@ type HomePageProps = {
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
-  const encuestaPosts = encuestas.slice(0, 6)
-  const estudioPosts = estudios.slice(0, 6)
+  const encuestaPosts = getEncuestas().slice(0, 6)
+  const estudioPosts = getEstudios().slice(0, 3)
   const heroRef = useRef<HTMLElement>(null)
   const [heroOffset, setHeroOffset] = useState({ x: 0, y: 0 })
   const heroStyle = {
