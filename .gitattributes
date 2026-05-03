@@ -1,0 +1,2 @@
+# Consistent LF in the repo avoids Windows CRLF warnings and matches Linux CI.
+* text=auto eol=lf
