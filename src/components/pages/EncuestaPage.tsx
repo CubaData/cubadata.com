@@ -36,9 +36,11 @@ export function EncuestaPage({ slug, onNavigate }: EncuestaPageProps) {
             ))}
           </div>
 
-          <AppLink className="hero-button primary" href={encuesta.pdf} onNavigate={onNavigate}>
-            Descargar PDF
-          </AppLink>
+          {encuesta.pdf && (
+            <AppLink className="hero-button primary" href={encuesta.pdf} onNavigate={onNavigate}>
+              Descargar PDF
+            </AppLink>
+          )}
         </article>
 
         <Sidebar onNavigate={onNavigate} />

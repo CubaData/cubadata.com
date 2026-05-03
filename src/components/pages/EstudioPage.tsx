@@ -1,5 +1,6 @@
 import { getEstudioBySlug } from '../../data'
 import type { Navigate } from '../../types'
+import { AppLink } from '../shared/AppLink'
 import { Sidebar } from '../shared/Sidebar'
 
 type EstudioPageProps = {
@@ -20,13 +21,18 @@ export function EstudioPage({ slug, onNavigate }: EstudioPageProps) {
           <h1>{estudio.title}</h1>
           <div className="study-meta">
             <time>{estudio.date}</time>
-            {estudio.researchType && <span>{estudio.researchType}</span>}
+            {estudio.serie && <span>{estudio.serie}</span>}
           </div>
-          {estudio.cover && <img className="single-cover" src={estudio.cover} alt="" />}
-          <div className="study-intro">{estudio.excerpt}</div>
-          {(estudio.body ?? []).map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+          <img className="single-cover" src={estudio.image} alt="" />
+          {estudio.excerpt && <div className="study-intro">{estudio.excerpt}</div>}
+          {estudio.summary.map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
           ))}
+          {estudio.pdf && (
+            <AppLink className="hero-button primary" href={estudio.pdf} onNavigate={onNavigate}>
+              Ver publicación
+            </AppLink>
+          )}
         </article>
         <Sidebar onNavigate={onNavigate} />
       </div>

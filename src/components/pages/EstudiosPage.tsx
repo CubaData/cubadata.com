@@ -27,7 +27,7 @@ export function EstudiosPage({ onNavigate }: EstudiosPageProps) {
                     </AppLink>
                   </h2>
                   <p className="meta">
-                    {estudio.author ? `${estudio.author} - ` : ''}
+                    {estudio.authors?.length ? `${estudio.authors.join(', ')} — ` : ''}
                     {estudio.date}
                   </p>
                   <p>{estudio.excerpt}</p>

@@ -16,7 +16,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
         <article key={slug}>
           <img src={image} alt="" />
           <h3>
-            <AppLink href={pdf} onNavigate={onNavigate}>
+            <AppLink href={pdf ?? `/encuestas/${slug}`} onNavigate={onNavigate}>
               {title}
             </AppLink>
           </h3>

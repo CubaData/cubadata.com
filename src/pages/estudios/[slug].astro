@@ -26,7 +26,7 @@ const keywords = [
 
 <BaseLayout
   title={`${estudio.title} - Cubadata`}
-  description={estudio.body?.[0] ?? estudio.excerpt}
+  description={(estudio.summary[0] ?? estudio.excerpt) ?? ''}
   keywords={keywords}
   image={estudio.image}
   canonicalPath={`/estudios/${estudio.slug}`}

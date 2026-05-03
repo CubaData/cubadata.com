@@ -13,7 +13,7 @@ export type Encuesta = {
   questions: number
   responses: number
   pdf: string | null
-  image: string | null
+  image: string
   keywords: string[] | null
   excerpt: string | null
   summary: string[]
@@ -27,7 +27,7 @@ export type Estudio = {
   isbn: string | null
   authors: string[] | null
   pdf: string | null
-  image: string | null
+  image: string
   keywords: string[] | null
   excerpt: string | null
   summary: string[]
