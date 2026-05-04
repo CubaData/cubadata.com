@@ -55,7 +55,6 @@
   line-height: 48px;
   padding: 0 14px;
   position: relative;
-  text-transform: uppercase;
 }
 
 .desktop-nav a::after {
@@ -217,21 +216,24 @@
 
 .hero-actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 36px;
 }
 
 .hero-button {
-  border-radius: 2px;
+  border-radius: 14px;
   display: inline-flex;
-  font-family: 'Cubadata Menu Sora', 'Sora', Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
+  font-family: 'Sora', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
   justify-content: center;
-  letter-spacing: 0.3px;
-  min-width: 148px;
-  padding: 15px 24px;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 0.5px;
+  min-width: 210px;
+  padding: 18px 32px;
   text-transform: uppercase;
   transition:
     background-color 0.2s ease,
@@ -245,8 +247,8 @@
 }
 
 .hero-button.primary {
-  background: var(--menu-hover);
-  border: 2px solid var(--menu-hover);
+  background: #d93b20;
+  border: 2px solid #d93b20;
   color: #fff;
 }
 
@@ -349,6 +351,10 @@
   display: grid;
   gap: 28px;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.post-grid.four-columns {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .post-card {
@@ -785,6 +791,32 @@
 .footer a {
   display: block;
   margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-link-item {
+  align-items: center;
+  color: #d8e7ff;
+  display: flex !important;
+  gap: 10px;
+  line-height: normal;
+  transition: color 0.2s ease;
+}
+
+.footer-link-item:hover {
+  color: #fff;
+}
+
+.footer-icon {
+  flex: 0 0 20px;
+  height: 20px;
+  margin-top: 1px;
+  width: 20px;
 }
 
 .not-found {

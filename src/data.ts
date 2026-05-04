@@ -35,7 +35,14 @@ export type Estudio = {
 
 export function getEncuestas(): Encuesta[]
 {
-  const encuestas = encuestasJson.map(function (item) {
+  const raw = [...encuestasJson]
+  raw.sort((a, b) => {
+    const dateA = new Date(a.start_date || '').getTime()
+    const dateB = new Date(b.start_date || '').getTime()
+    return dateB - dateA
+  })
+
+  return raw.map(function (item) {
     return {
       slug: item.slug,
       title: item.title,
@@ -51,8 +58,6 @@ export function getEncuestas(): Encuesta[]
       summary: formatTextAsParagraphs(item.summary),
     }
   })
-
-  return encuestas
 }
 
 export function getEncuestaBySlug(slug: string): Encuesta | null
@@ -63,7 +68,14 @@ export function getEncuestaBySlug(slug: string): Encuesta | null
 
 export function getEstudios(): Estudio[]
 {
-  const estudios = estudiosJson.map(function (item) {
+  const raw = [...estudiosJson]
+  raw.sort((a, b) => {
+    const dateA = new Date(a.date || '').getTime()
+    const dateB = new Date(b.date || '').getTime()
+    return dateB - dateA
+  })
+
+  return raw.map(function (item) {
     return {
       slug: item.slug,
       date: formatDateEs(item.date),
@@ -78,8 +90,6 @@ export function getEstudios(): Estudio[]
       summary: formatTextAsParagraphs(item.summary),
     }
   })
-
-  return estudios
 }
 
 export function getEstudioBySlug(slug: string): Estudio | null

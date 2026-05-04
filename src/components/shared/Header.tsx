@@ -7,7 +7,6 @@ const navItems = [
   { label: 'Estudios', href: '/estudios' },
   { label: 'Sobre nosotros', href: '/quienes-somos' },
   { label: 'Principios éticos', href: '#' },
-  { label: 'Contacto', href: '#' },
 ]
 
 type HeaderProps = {
@@ -36,9 +35,6 @@ export function Header({ activePage, onNavigate }: HeaderProps) {
             </AppLink>
           ))}
         </nav>
-        <button className="search-button" aria-label="Buscar">
-          <span>⌕</span>
-        </button>
         <button className="menu-toggle" onClick={() => setOpen((value) => !value)} aria-label="Abrir menú">
           <span />
           <span />

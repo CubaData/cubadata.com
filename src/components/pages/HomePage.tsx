@@ -80,7 +80,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="hero-section td-mesh-bg" onMouseMove={handleHeroMouseMove} ref={heroRef} style={heroStyle}>
         <div className="container hero-grid">
           <div className="hero-copy">
-            <span>Conoce qué opinan los cubanos</span>
             <h1>Cuba cambia, nosotros te mostramos cómo</h1>
             <p>
               En Cubadata generamos datos, información y análisis de la realidad cubana a partir de la
@@ -88,21 +87,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </p>
             <div className="hero-actions">
               <AppLink className="hero-button primary" href="/encuestas" onNavigate={onNavigate}>
-                Encuestas
+                Nuestras Encuestas &rsaquo;
               </AppLink>
-              <AppLink className="hero-button secondary" href="/estudios" onNavigate={onNavigate}>
-                Estudios
+              <AppLink className="hero-button primary" href="/estudios" onNavigate={onNavigate}>
+                Nuestros Estudios &rsaquo;
               </AppLink>
-            </div>
-            <div className="hero-growth">
-              <svg viewBox="0 0 42 42" aria-hidden="true">
-                <path d="M5 35h32v3H5zM9 23h5v10H9zM18.5 15h5v18h-5zM28 8h5v25h-5z" />
-                <path d="M8 17.5 18.5 9l8.2 5.7L35 5.8l2 1.9-9.9 10.6-8.4-5.8L9.8 20z" />
-              </svg>
-              <div>
-                <h3>Crece con Cubadata</h3>
-                <p>Nos dedicamos a la investigación en opinión pública y estudios de mercado.</p>
-              </div>
             </div>
           </div>
           <img className="hero-image" src="/images/page/home/hero.png" alt="Cubadata" />
