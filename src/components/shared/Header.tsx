@@ -6,7 +6,7 @@ const navItems = [
   { label: 'Encuestas', href: '/encuestas' },
   { label: 'Estudios', href: '/estudios' },
   { label: 'Sobre nosotros', href: '/quienes-somos' },
-  { label: 'Principios éticos', href: '#' },
+  { label: 'AI', href: 'https://ai.datacuba.com/', target: '_blank' },
 ]
 
 type HeaderProps = {
@@ -30,6 +30,7 @@ export function Header({ activePage, onNavigate }: HeaderProps) {
               href={item.href}
               key={item.label}
               onNavigate={onNavigate}
+              target={item.target}
             >
               {item.label}
             </AppLink>
@@ -44,7 +45,7 @@ export function Header({ activePage, onNavigate }: HeaderProps) {
       {open && (
         <nav className="mobile-nav" aria-label="Principal móvil">
           {navItems.map((item) => (
-            <AppLink href={item.href} key={item.label} onNavigate={onNavigate}>
+            <AppLink href={item.href} key={item.label} onNavigate={onNavigate} target={item.target}>
               {item.label}
             </AppLink>
           ))}

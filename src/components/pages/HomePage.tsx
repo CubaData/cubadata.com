@@ -77,8 +77,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   return (
     <main>
-      <section className="hero-section td-mesh-bg" onMouseMove={handleHeroMouseMove} ref={heroRef} style={heroStyle}>
-        <div className="container hero-grid">
+      <section
+        className="hero-section td-mesh-bg"
+        onMouseMove={handleHeroMouseMove}
+        ref={heroRef}
+        style={{ ...heroStyle, overflow: 'visible' }}
+      >
+        <div className="container hero-grid" style={{ overflow: 'visible' }}>
           <div className="hero-copy">
             <h1>Cuba cambia, nosotros te mostramos cómo</h1>
             <p>
@@ -94,27 +99,38 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </AppLink>
             </div>
           </div>
-          <img className="hero-image" src="/images/page/home/hero.png" alt="Cubadata" />
+          <img
+            className="hero-image"
+            src="/images/page/home/hero.png"
+            alt="Cubadata"
+            style={{
+              transform: 'translate(var(--hero-x), calc(var(--hero-y) + 140px))',
+              zIndex: 100,
+              position: 'relative',
+            }}
+          />
         </div>
       </section>
 
-      <section className="partners container">
-        <div className="alliances-title">
-          <svg viewBox="0 0 44 44" aria-hidden="true">
-            <path d="M22 4 5 13v4h34v-4L22 4Zm-9 16H8v14h5V20Zm9 0h-5v14h5V20Zm9 0h-5v14h5V20Zm8 17H5v4h34v-4Z" />
-          </svg>
-          <span>
-            Alianzas
-            <br />
-            académicas
-          </span>
-        </div>
-        <div className="partner-logos">
-          <img src="/images/university/san-martin.png" alt="Universidad San Martín de Porres" />
-          <img src="/images/university/barcelona.png" alt="Universidad de Barcelona" />
-          <img src="/images/university/uam.png" alt="UAM" />
-        </div>
-      </section>
+      <div className="partners-bar-wrapper">
+        <section className="partners">
+          <div className="alliances-title">
+            <svg viewBox="0 0 44 44" aria-hidden="true">
+              <path d="M22 4 5 13v4h34v-4L22 4Zm-9 16H8v14h5V20Zm9 0h-5v14h5V20Zm9 0h-5v14h5V20Zm8 17H5v4h34v-4Z" />
+            </svg>
+            <span>
+              Alianzas
+              <br />
+              académicas
+            </span>
+          </div>
+          <div className="partner-logos">
+            <img src="/images/university/san-martin.png" alt="Universidad San Martín de Porres" />
+            <img src="/images/university/barcelona.png" alt="Universidad de Barcelona" />
+            <img src="/images/university/uam.png" alt="UAM" />
+          </div>
+        </section>
+      </div>
 
       <PostShowcase
         eyebrow="Encuestas públicas"

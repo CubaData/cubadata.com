@@ -10,20 +10,20 @@ type SidebarProps = {
 
 export function Sidebar({ onNavigate }: SidebarProps) {
   return (
-    <aside className="sidebar">
-      <h2>Últimas publicaciones</h2>
-      {latestPosts.map(({ slug, image, title, start_date, excerpt, pdf }) => (
-        <article key={slug}>
-          <img src={image} alt="" />
-          <h3>
-            <AppLink href={pdf ?? `/encuestas/${slug}`} onNavigate={onNavigate}>
-              {title}
-            </AppLink>
-          </h3>
-          <time>{start_date}</time>
-          <p>{excerpt}</p>
-        </article>
-      ))}
+    <aside className="sidebar modern-sidebar">
+      <div className="sidebar-card">
+        <h2>Últimas publicaciones</h2>
+        {latestPosts.map(({ slug, title, start_date, pdf }) => (
+          <article key={slug} className="sidebar-article">
+            <h3>
+              <AppLink href={pdf ?? `/encuestas/${slug}`} onNavigate={onNavigate}>
+                {title}
+              </AppLink>
+            </h3>
+            <time>{start_date}</time>
+          </article>
+        ))}
+      </div>
     </aside>
   )
 }

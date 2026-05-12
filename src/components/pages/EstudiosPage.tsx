@@ -10,7 +10,7 @@ type EstudiosPageProps = {
 export function EstudiosPage({ onNavigate }: EstudiosPageProps) {
   return (
     <main className="archive-page estudios-page">
-      <div className="container two-column">
+      <div className="container">
         <section>
           <h1 className="archive-title">Estudios</h1>
           <div className="archive-list estudios-list">
@@ -36,7 +36,7 @@ export function EstudiosPage({ onNavigate }: EstudiosPageProps) {
             ))}
           </div>
         </section>
-        <Sidebar onNavigate={onNavigate} />
+        {/* <Sidebar onNavigate={onNavigate} /> */}
       </div>
     </main>
   )
