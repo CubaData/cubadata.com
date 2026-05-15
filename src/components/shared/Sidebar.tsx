@@ -2,7 +2,7 @@ import { getEncuestas } from '../../data'
 import type { Navigate } from '../../types'
 import { AppLink } from './AppLink'
 
-const latestPosts = getEncuestas().slice(0, 3)
+const latestPosts = getEncuestas().slice(0, 5)
 
 type SidebarProps = {
   onNavigate?: Navigate
@@ -12,15 +12,15 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   return (
     <aside className="sidebar modern-sidebar">
       <div className="sidebar-card">
-        <h2>Últimas publicaciones</h2>
+        <h3>Últimas publicaciones</h3>
         {latestPosts.map(({ slug, title, start_date, pdf }) => (
           <article key={slug} className="sidebar-article">
-            <h3>
+            <h4>
               <AppLink href={pdf ?? `/encuestas/${slug}`} onNavigate={onNavigate}>
                 {title}
               </AppLink>
-            </h3>
-            <time>{start_date}</time>
+            </h4>
+            <time className="sidebar-date mt-0">{start_date}</time>
           </article>
         ))}
       </div>
