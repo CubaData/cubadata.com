@@ -103,39 +103,56 @@ export function AboutPage() {
         <p>
           Con el compromiso de garantizar la integridad, seguridad y confidencialidad de los datos que recopila, Cubadata establece los siguientes principios éticos en su práctica:
         </p> 
-          <br /><br />
-          <h3>Respeto por la privacidad y anonimato</h3>
-          <br /><br />
 
-          <p>Todos los datos recolectados y distribuidos por Cubadata se mantienen en estricta anonimización, garantizando que no hay manera de identificar a los individuos a partir de los datos recolectados. Este compromiso se extiende a todos los aspectos de nuestra investigación y distribución de datos.</p>
-          <br /><br />
-          <h3>Consentimiento informado</h3>
-          <br /><br />
-
-          <p>Todo participante en nuestras encuestas proporciona su consentimiento voluntario e informado antes de compartir cualquier información. Este consentimiento abarca tanto la recolección inicial como cualquier uso futuro de sus datos con el propósito de investigaciones que reflejen la realidad cubana.</p>
-          <br /><br />
-          <h3>Integridad de los datos</h3>
-          <br /><br />
-
-          <p>Cubadata se compromete a no recolectar, almacenar o distribuir ningún dato o información sensible que pueda comprometer la integridad y seguridad de los participantes. Nos aseguramos de que los datos no contengan detalles como registros médicos, información financiera o cualquier otro tipo de información personal delicada.</p>
-          <br /><br />
-
-          <h3>Transparencia y uso público</h3>
-          <br /><br />
-
-          <p>Los conjuntos de datos que Cubadata recopila y distribuye están diseñados para ser de uso público. Promovemos la investigación y el análisis transparente, asegurándonos de que la información sea accesible para quienes buscan comprender y abordar los diversos aspectos de la realidad cubana.</p>
-          <br /><br />
-
-          <h3>Seguridad y minimización de riesgos</h3>
-          <br /><br />
-
-          <p>Estamos comprometidos en garantizar que no exista un riesgo significativo de reidentificación de los individuos a partir de nuestros datos secundarios. Implementamos protocolos y tecnologías avanzadas para salvaguardar todos los datos y minimizar cualquier potencial riesgo para nuestros participantes.</p>
-          <br /><br />
-
-          <p className="text-center"> * &nbsp; &nbsp; * &nbsp; &nbsp; *</p>
-          <br /><br />
+        <h2>Respeto por la privacidad y anonimato</h2>
         <p>
-          Cubadata se adhiere a estos principios éticos en todos sus proyectos y actividades. Estamos comprometidos con la protección y seguridad de nuestros participantes y con la promoción de investigaciones éticas y responsables que contribuyan al entendimiento y avance de la sociedad cubana.
+          Todos los datos recolectados y distribuidos por Cubadata se mantienen en estricta
+          anonimización, garantizando que no hay manera de identificar a los individuos a partir de
+          los datos recolectados. Este compromiso se extiende a todos los aspectos de nuestra
+          investigación y distribución de datos.
+        </p>
+
+        <h2>Consentimiento informado</h2>
+        <p>
+          Todo participante en nuestras encuestas proporciona su consentimiento voluntario e
+          informado antes de compartir cualquier información. Este consentimiento abarca tanto la
+          recolección inicial como cualquier uso futuro de sus datos con el propósito de
+          investigaciones que reflejen la realidad cubana.
+        </p>
+
+        <h2>Integridad de los datos</h2>
+        <p>
+          Cubadata se compromete a no recolectar, almacenar o distribuir ningún dato o información
+          sensible que pueda comprometer la integridad y seguridad de los participantes. Nos
+          aseguramos de que los datos no contengan detalles como registros médicos, información
+          financiera o cualquier otro tipo de información personal delicada.
+        </p>
+
+        <h2>Transparencia y uso público</h2>
+        <p>
+          Los conjuntos de datos que Cubadata recopila y distribuye están diseñados para ser de uso
+          público. Promovemos la investigación y el análisis transparente, asegurándonos de que la
+          información sea accesible para quienes buscan comprender y abordar los diversos aspectos de
+          la realidad cubana.
+        </p>
+
+        <h2>Seguridad y minimización de riesgos</h2>
+        <p>
+          Estamos comprometidos en garantizar que no exista un riesgo significativo de
+          reidentificación de los individuos a partir de nuestros datos secundarios. Implementamos
+          protocolos y tecnologías avanzadas para salvaguardar todos los datos y minimizar cualquier
+          potencial riesgo para nuestros participantes.
+        </p>
+
+        <p className="text-center" style={{ margin: '44px 0', fontSize: '18px', color: 'var(--orange)' }}>
+          * &nbsp; &nbsp; * &nbsp; &nbsp; *
+        </p>
+
+        <p>
+          Cubadata se adhiere a estos principios éticos en todos sus proyectos y actividades. Estamos
+          comprometidos con la protección y seguridad de nuestros participantes y con la promoción de
+          investigaciones éticas y responsables que contribuyan al entendimiento y avance de la
+          sociedad cubana.
         </p>
       </section>  
     </main>

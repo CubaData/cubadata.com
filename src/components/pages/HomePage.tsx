@@ -143,17 +143,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </div>
 
       <PostShowcase
-        eyebrow="Encuestas públicas"
+        eyebrow=""
         hrefBase="/encuestas"
-        title="Encuestas públicas de Cubadata"
+        title="Encuestas públicas"
         posts={encuestaPosts}
         onNavigate={onNavigate}
       />
 
       <PostShowcase
-        eyebrow="Estudios y análisis"
+        eyebrow=""
         hrefBase="/estudios"
-        title="Estudios y análisis públicos"
+        title="Estudios y análisis"
         posts={estudioPosts}
         onNavigate={onNavigate}
       />

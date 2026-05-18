@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 import type { Navigate } from '../../types'
 import { AppLink } from './AppLink'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRobot } from '@fortawesome/free-solid-svg-icons'
 
 const navItems = [
   { label: 'Encuestas', href: '/encuestas' },
   { label: 'Estudios', href: '/estudios' },
   { label: 'Sobre nosotros', href: '/quienes-somos' },
-  { label: 'Principios éticos', href: '/principios-eticos' },
-  { label: 'Contacto', href: '/contacto' },
-  { label: '🤖 AI', href: 'https://ai.datacuba.com/', target: '_blank' },
+  { label: 'AI', href: 'https://ai.datacuba.com/', target: '_blank', icon: faRobot },
 ]
 
 type HeaderProps = {
@@ -45,7 +45,14 @@ export function Header({ activePage, onNavigate }: HeaderProps) {
               onNavigate={onNavigate}
               target={item.target}
             >
-              {item.label}
+              {item.icon ? (
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <FontAwesomeIcon icon={item.icon} style={{ fontSize: '13px' }} />
+                  {item.label}
+                </span>
+              ) : (
+                item.label
+              )}
             </AppLink>
           ))}
         </nav>
@@ -79,7 +86,14 @@ export function Header({ activePage, onNavigate }: HeaderProps) {
                 }}
                 target={item.target}
               >
-                {item.label}
+                {item.icon ? (
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                    <FontAwesomeIcon icon={item.icon} style={{ fontSize: '13px' }} />
+                    {item.label}
+                  </span>
+                ) : (
+                  item.label
+                )}
               </AppLink>
             ))}
           </div>
