@@ -12,6 +12,7 @@ dist
 dist-ssr
 .astro
 *.local
+.venv*
 
 # Environment files
 .env
