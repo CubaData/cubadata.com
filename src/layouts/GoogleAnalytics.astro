@@ -1,0 +1,24 @@
+---
+const googleAnalyticsMeasurementId = 'G-K2N5ZXYQQC'
+const isGoogleAnalyticsEnabled = import.meta.env.PROD
+---
+
+{
+  isGoogleAnalyticsEnabled && (
+    <>
+      <script
+        is:inline
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsMeasurementId}`}
+      />
+      <script is:inline define:vars={{ googleAnalyticsMeasurementId }}>
+        window.dataLayer = window.dataLayer || []
+        function gtag() {
+          dataLayer.push(arguments)
+        }
+        gtag('js', new Date())
+        gtag('config', googleAnalyticsMeasurementId)
+      </script>
+    </>
+  )
+}

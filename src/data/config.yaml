@@ -37,3 +37,19 @@ tabs:
   - keywords: list
   - excerpt: string
   - summary: string
+- gid: 1363584095
+  export: articles.json
+  fields:
+  - slug: string
+  - date: date
+  - title: string
+  - image: url
+  - link: url
+  - keywords: list
+  - excerpt: string
+  - summary: string
+- gid: 1877073190
+  export: redirections.json
+  fields:
+  - from: string
+  - to: string
