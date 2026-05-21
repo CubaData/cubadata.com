@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import { NotFoundPage } from '../components/pages/NotFoundPage'
+import redirections from '../data/redirections.json'
 ---
 
 <BaseLayout
@@ -9,5 +10,19 @@ import { NotFoundPage } from '../components/pages/NotFoundPage'
   keywords={['Cubadata', '404']}
   canonicalPath="/404"
 >
+  <script is:inline define:vars={{ redirections }}>
+    (function () {
+      var path = window.location.pathname;
+      var normalizedPath = path.replace(/\/$/, '').toLowerCase();
+
+      for (var i = 0; i < redirections.length; i++) {
+        var fromPath = redirections[i].from.replace(/\/$/, '').toLowerCase();
+        if (fromPath === normalizedPath) {
+          window.location.replace(redirections[i].to);
+          break;
+        }
+      }
+    })();
+  </script>
   <NotFoundPage />
 </BaseLayout>
