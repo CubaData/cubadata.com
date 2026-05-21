@@ -1,5 +1,6 @@
 import encuestasJson from './data/encuestas.json'
 import estudiosJson from './data/estudios.json'
+import articlesJson from './data/articles.json'
 import { formatDateEs, formatTextAsParagraphs } from './utils/formatData'
 
 const FALLBACK_IMAGE = '/images/post/cubadata_default.jpg'
@@ -96,4 +97,44 @@ export function getEstudioBySlug(slug: string): Estudio | null
 {
   const estudio = getEstudios().find((item) => item.slug === slug)
   return estudio ?? null
+}
+
+export type Article = {
+  slug: string
+  date: string
+  title: string
+  image: string
+  link: string
+  keywords: string[] | null
+  excerpt: string | null
+  summary: string[]
+}
+
+export function getArticles(): Article[]
+{
+  const raw = [...articlesJson]
+  raw.sort((a, b) => {
+    const dateA = new Date(a.date || '').getTime()
+    const dateB = new Date(b.date || '').getTime()
+    return dateB - dateA
+  })
+
+  return raw.map(function (item) {
+    return {
+      slug: item.slug,
+      date: formatDateEs(item.date),
+      title: item.title,
+      image: item.image ?? FALLBACK_IMAGE,
+      link: item.link,
+      keywords: item.keywords,
+      excerpt: item.excerpt,
+      summary: formatTextAsParagraphs(item.summary),
+    }
+  })
+}
+
+export function getArticleBySlug(slug: string): Article | null
+{
+  const article = getArticles().find((item) => item.slug === slug)
+  return article ?? null
 }

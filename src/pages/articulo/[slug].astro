@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getArticles } from '../../data'
+import { ArticlePage } from '../../components/pages/ArticlePage'
+
+export function getStaticPaths() {
+  return getArticles().map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }))
+}
+
+const { article } = Astro.props
+const keywords = [
+  'Cubadata',
+  'Cuba',
+  'articulo',
+  'análisis',
+  ...article.keywords ?? []
+]
+---
+
+<BaseLayout
+  title={`${article.title} - Cubadata`}
+  description={(article.summary[0] ?? article.excerpt) ?? ''}
+  keywords={keywords}
+  image={article.image}
+  canonicalPath={`/articulo/${article.slug}`}
+  activePage="/articulo"
+  type="article"
+>
+  <ArticlePage slug={article.slug} client:load />
+</BaseLayout>

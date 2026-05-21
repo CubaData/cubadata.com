@@ -1457,7 +1457,7 @@
   display: inline-flex;
   font-family: 'Sora', Arial, sans-serif;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 600;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -1465,6 +1465,12 @@
   padding: 10px 32px;
   text-transform: uppercase;
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.pdf-download-button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
 /* Sidebar Modern Box */
