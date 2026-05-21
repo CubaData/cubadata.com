@@ -102,7 +102,7 @@ export function EstudioPage({ slug, onNavigate }: EstudioPageProps) {
               </AppLink>
             )}
           </article>
-          <Sidebar onNavigate={onNavigate} />
+          <Sidebar onNavigate={onNavigate} serie={estudio.serie} />
         </div>
       </div>
     </main>

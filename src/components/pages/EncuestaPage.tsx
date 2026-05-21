@@ -101,7 +101,7 @@ export function EncuestaPage({ slug, onNavigate }: EncuestaPageProps) {
             )}
           </article>
 
-          <Sidebar onNavigate={onNavigate} isSurvey />
+          <Sidebar onNavigate={onNavigate} isSurvey serie={encuesta.serie} />
         </div>
       </div>
     </main>
