@@ -2,7 +2,7 @@ import encuestasJson from './data/encuestas.json'
 import estudiosJson from './data/estudios.json'
 import { formatDateEs, formatTextAsParagraphs } from './utils/formatData'
 
-const FALLBACK_IMAGE = '/images/post/segundo-panel-card.jpg'
+const FALLBACK_IMAGE = '/images/post/cubadata_default.jpg'
 
 export type Encuesta = {
   slug: string

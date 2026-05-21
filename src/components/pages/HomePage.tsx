@@ -131,7 +131,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <span>
               Alianzas
               <br />
-              académicas
+              &nbsp;académicas
             </span>
           </div>
           <div className="partner-logos">
@@ -170,7 +170,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               eyebrow="Para periodistas" 
               title="Prensa y medios de comunicación"
               ctaText="INFORMA CON CUBADATA"
-              href="/contacto"
+              href=""
             >
               Cubadata pone a disposición de periodistas y comunicadores herramientas ágiles para sondear los estados de opinión en la Isla.
             </ServiceCard>
@@ -179,7 +179,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               eyebrow="Para estudiosos" 
               title="Universidades y centros de investigación"
               ctaText="INVESTIGA CON CUBADATA"
-              href="/contacto"
+              href=""
             >
               ¿Desarrollas una investigación sobre la actualidad cubana? Accede a datos verificables y validados científicamente.
             </ServiceCard>
@@ -188,7 +188,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               eyebrow="Para implementadores" 
               title="Organizaciones privadas y sociedad civil"
               ctaText="PROYECTA CON CUBADATA"
-              href="/contacto"
+              href=""
             >
               Con Cubadata puedes determinar quiénes son, dónde están y qué piensan las fuerzas vivas de la sociedad cubana.
             </ServiceCard>

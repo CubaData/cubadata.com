@@ -18,7 +18,7 @@ export function ServiceCard({ children, eyebrow, image, title, ctaText, href }: 
         <p className="service-card-description">{children}</p>
         <div className="service-card-cta">
           <span className="cta-bar"></span>
-          <a href={href}>{ctaText} &rsaquo;</a>
+          <span>{ctaText}</span>
         </div>
       </div>
       <div className="service-card-image">

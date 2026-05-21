@@ -9,10 +9,23 @@ type PostCardProps = {
 }
 
 export function PostCard({ href, post, onNavigate }: PostCardProps) {
+  const defaultImage = '/images/post/cubadata_default.jpg'
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.currentTarget
+    target.src = defaultImage
+    target.onerror = null 
+  }
+
   return (
     <article className="post-card">
       <AppLink className="post-image" href={href} onNavigate={onNavigate}>
-        <img src={post.image} alt="" />
+        <img 
+          src={post.image || defaultImage} 
+          alt="" 
+          referrerPolicy="no-referrer"
+          onError={handleImageError} 
+        />
       </AppLink>
       <div className="post-card-body">
         <h3>

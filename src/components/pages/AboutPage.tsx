@@ -25,7 +25,9 @@ export function AboutPage() {
             </p>
           </div>
         
+          <div className="about-hero-image">
             <img src="/images/logo/circle-large.png" alt="Equipo Cubadata" />
+          </div>
         </div>
       </section>
 
@@ -144,7 +146,7 @@ export function AboutPage() {
           potencial riesgo para nuestros participantes.
         </p>
 
-        <p className="text-center" style={{ margin: '44px 0', fontSize: '18px', color: 'var(--orange)' }}>
+        <p className="text-center">
           * &nbsp; &nbsp; * &nbsp; &nbsp; *
         </p>
 

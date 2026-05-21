@@ -13,6 +13,35 @@ export function EstudioPage({ slug, onNavigate }: EstudioPageProps) {
 
   if (!estudio) return null
 
+  const handleShare = (platform: 'main' | 'facebook' | 'twitter' | 'pinterest' | 'whatsapp') => {
+    const url = window.location.href
+    const title = estudio.title
+
+    switch (platform) {
+      case 'main':
+        if (navigator.share) {
+          navigator.share({ title, url }).catch(console.error)
+        } else {
+          navigator.clipboard.writeText(url)
+          alert('Enlace copiado al portapapeles')
+        }
+        break
+      case 'facebook':
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'noopener,noreferrer')
+        break
+      case 'twitter':
+        window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank', 'noopener,noreferrer')
+        break
+      case 'pinterest':
+        const media = estudio.image ? (estudio.image.startsWith('http') ? estudio.image : window.location.origin + estudio.image) : ''
+        window.open(`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&media=${encodeURIComponent(media)}&description=${encodeURIComponent(title)}`, '_blank', 'noopener,noreferrer')
+        break
+      case 'whatsapp':
+        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' ' + url)}`, '_blank', 'noopener,noreferrer')
+        break
+    }
+  }
+
   return (
     <main className="post-page study-page">
       <div className="container">
@@ -32,25 +61,21 @@ export function EstudioPage({ slug, onNavigate }: EstudioPageProps) {
         <div className="two-column">
           <article className="single-post study-post">
             <div className="social-share">
-              <button className="share-btn share-main">
+              <button className="share-btn share-main" onClick={() => handleShare('main')}>
                 <ShareIcon />
                 Compartir
               </button>
-              <button className="share-btn facebook">
+              <button className="share-btn facebook" onClick={() => handleShare('facebook')}>
                 <FacebookIcon />
-                Facebook
               </button>
-              <button className="share-btn twitter">
+              <button className="share-btn twitter" onClick={() => handleShare('twitter')}>
                 <TwitterIcon />
-                Twitter
               </button>
-              <button className="share-btn pinterest">
+              <button className="share-btn pinterest" onClick={() => handleShare('pinterest')}>
                 <PinterestIcon />
-                Pinterest
               </button>
-              <button className="share-btn whatsapp">
+              <button className="share-btn whatsapp" onClick={() => handleShare('whatsapp')}>
                 <WhatsappIcon />
-                WhatsApp
               </button>
             </div>
 
@@ -71,15 +96,10 @@ export function EstudioPage({ slug, onNavigate }: EstudioPageProps) {
             )}
 
             {estudio.pdf && (
-              <div className="pdf-download-section">
-                <div className="pdf-preview-card">
-                  <img src={estudio.image} alt="PDF Preview" />
-                  <AppLink className="pdf-download-link" href={estudio.pdf} onNavigate={onNavigate}>
-                    <DownloadIcon />
-                    Descargar PDF
-                  </AppLink>
-                </div>
-              </div>
+              <AppLink className="pdf-download-button" href={estudio.pdf} onNavigate={onNavigate}>
+                <DownloadIcon />
+                Descargar PDF
+              </AppLink>
             )}
           </article>
           <Sidebar onNavigate={onNavigate} />

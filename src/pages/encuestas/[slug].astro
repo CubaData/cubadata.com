@@ -16,11 +16,8 @@ const keywords = [
   'Cuba',
   'encuesta',
   'opinión pública',
-  ...encuesta.title
-    .split(/\s+/)
-    .map((word) => word.replace(/[^\p{L}\p{N}]/gu, ''))
-    .filter((word) => word.length > 5)
-    .slice(0, 6),
+  ...encuesta.keywords,
+
 ]
 ---
 

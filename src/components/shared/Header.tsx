@@ -80,10 +80,7 @@ export function Header({ activePage, onNavigate }: HeaderProps) {
                 className={activePage === item.href ? 'active' : undefined}
                 href={item.href}
                 key={item.label}
-                onNavigate={(href) => {
-                  setOpen(false)
-                  onNavigate?.(href)
-                }}
+                onNavigate={onNavigate}
                 target={item.target}
               >
                 {item.icon ? (

@@ -16,11 +16,7 @@ const keywords = [
   'Cuba',
   'estudio',
   'análisis',
-  ...estudio.title
-    .split(/\s+/)
-    .map((word) => word.replace(/[^\p{L}\p{N}]/gu, ''))
-    .filter((word) => word.length > 5)
-    .slice(0, 6),
+  ...estudio.keywords
 ]
 ---
 

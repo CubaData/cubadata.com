@@ -20,7 +20,7 @@ export function PostShowcase({ eyebrow, hrefBase, onNavigate, posts, title }: Po
         title={title}
         action={
           <AppLink className="button-outline" href={hrefBase} onNavigate={onNavigate}>
-            VER TODAS &rsaquo;
+            Ver más &rsaquo;
           </AppLink>
         }
       />
