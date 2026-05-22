@@ -1,4 +1,4 @@
-import { getEncuestas, getEstudios } from '../../data'
+import { getEncuestas, getEstudios, getArticles } from '../../data'
 import type { Navigate } from '../../types'
 import { AppLink } from './AppLink'
 import encuestasJson from '../../data/encuestas.json'
@@ -8,6 +8,7 @@ import { formatDateEs } from '../../utils/formatData'
 type SidebarProps = {
   onNavigate?: Navigate
   isSurvey?: boolean
+  isArticle?: boolean
   serie?: string | null
 }
 
@@ -19,13 +20,17 @@ type SeriesItem = {
   isSurvey: boolean
 }
 
-export function Sidebar({ onNavigate, isSurvey, serie }: SidebarProps) {
-  const rawPosts = isSurvey ? getEncuestas().slice(0, 5) : getEstudios().slice(0, 5)
+export function Sidebar({ onNavigate, isSurvey, isArticle, serie }: SidebarProps) {
+  const rawPosts = isSurvey 
+    ? getEncuestas().slice(0, 5) 
+    : isArticle 
+      ? getArticles().slice(0, 5) 
+      : getEstudios().slice(0, 5)
 
   const latestPosts = rawPosts.map((post) => ({
     slug: post.slug,
     title: post.title,
-    pdf: post.pdf,
+    pdf: 'pdf' in post ? post.pdf : null,
     date: 'start_date' in post ? post.start_date : post.date,
   }))
 
@@ -72,7 +77,7 @@ export function Sidebar({ onNavigate, isSurvey, serie }: SidebarProps) {
           {seriesItems.map(({ slug, title, pdf, dateRaw, isSurvey: itemIsSurvey }) => (
             <article key={slug} className="sidebar-article">
               <h4>
-                <AppLink href={pdf ?? (itemIsSurvey ? `/encuestas/${slug}` : `/estudios/${slug}`)} onNavigate={onNavigate}>
+                <AppLink href={pdf ?? (itemIsSurvey ? `/encuestas/${slug}` : `/estudios/${slug}`)} target={pdf ? "_blank" : undefined} onNavigate={onNavigate}>
                   {title}
                 </AppLink>
               </h4>
@@ -82,11 +87,11 @@ export function Sidebar({ onNavigate, isSurvey, serie }: SidebarProps) {
         </div>
       )}
       <div className="sidebar-card">
-        <h3>{isSurvey ? 'Últimas encuestas' : 'Últimos estudios'}</h3>
+        <h3>{isSurvey ? 'Últimas encuestas' : isArticle ? 'Últimos artículos' : 'Últimos estudios'}</h3>
         {latestPosts.map(({ slug, title, pdf, date }) => (
           <article key={slug} className="sidebar-article">
             <h4>
-              <AppLink href={pdf ?? (isSurvey ? `/encuestas/${slug}` : `/estudios/${slug}`)} onNavigate={onNavigate}>
+              <AppLink href={pdf ?? (isSurvey ? `/encuestas/${slug}` : isArticle ? `/articulo/${slug}` : `/estudios/${slug}`)} target={pdf ? "_blank" : undefined} onNavigate={onNavigate}>
                 {title}
               </AppLink>
             </h4>

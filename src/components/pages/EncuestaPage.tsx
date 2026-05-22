@@ -94,7 +94,7 @@ export function EncuestaPage({ slug, onNavigate }: EncuestaPageProps) {
             )}
 
             {encuesta.pdf && (
-              <AppLink className="pdf-download-button" href={encuesta.pdf} onNavigate={onNavigate}>
+              <AppLink className="pdf-download-button" href={encuesta.pdf} target="_blank" onNavigate={onNavigate}>
                 <DownloadIcon />
                 Descargar PDF
               </AppLink>

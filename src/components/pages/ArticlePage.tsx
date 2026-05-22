@@ -94,7 +94,7 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
               </AppLink>
             )}
           </article>
-          <Sidebar onNavigate={onNavigate} />
+          <Sidebar onNavigate={onNavigate} isArticle />
         </div>
       </div>
     </main>

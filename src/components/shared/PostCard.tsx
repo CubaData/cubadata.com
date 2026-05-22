@@ -33,11 +33,12 @@ export function PostCard({ href, post, onNavigate }: PostCardProps) {
             {post.title}
           </AppLink>
         </h3>
-        <p>{post.excerpt}</p>
         <time>
           {'start_date' in post ? `${post.start_date} — ${post.end_date}` : post.date}
         </time>
+        <p>{post.excerpt}</p>
       </div>
+
     </article>
   )
 }

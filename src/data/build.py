@@ -54,7 +54,7 @@ def _parse_date(s: str) -> str:
         except ValueError:
             continue
     try:
-        return datetime.strptime(s, "%Y-%m").date().isoformat()
+        return datetime.strptime(s, "%Y-%m").strftime("%Y-%m")
     except ValueError:
         pass
     raise ValueError(f"not a valid date: {s!r}")

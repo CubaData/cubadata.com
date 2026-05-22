@@ -96,7 +96,7 @@ export function EstudioPage({ slug, onNavigate }: EstudioPageProps) {
             )}
 
             {estudio.pdf && (
-              <AppLink className="pdf-download-button" href={estudio.pdf} onNavigate={onNavigate}>
+              <AppLink className="pdf-download-button" href={estudio.pdf} target="_blank" onNavigate={onNavigate}>
                 <DownloadIcon />
                 Descargar PDF
               </AppLink>

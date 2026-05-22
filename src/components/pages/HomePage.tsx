@@ -8,12 +8,12 @@ import { SectionTitle } from '../shared/SectionTitle'
 import { ServiceCard } from '../shared/ServiceCard'
 import { loadScript } from '../../utils/loadScript'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { 
-  faStreetView, 
-  faRocket, 
-  faChartArea, 
-  faHandshake, 
-  faCogs, 
+import {
+  faStreetView,
+  faRocket,
+  faChartArea,
+  faHandshake,
+  faCogs,
   faLock,
   faQuoteLeft
 } from '@fortawesome/free-solid-svg-icons'
@@ -145,7 +145,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <PostShowcase
         eyebrow=""
         hrefBase="/encuestas"
-        title="Encuestas públicas"
+        title="Encuestas"
         posts={encuestaPosts}
         onNavigate={onNavigate}
       />
@@ -153,7 +153,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <PostShowcase
         eyebrow=""
         hrefBase="/estudios"
-        title="Estudios y análisis"
+        title="Estudios"
         posts={estudioPosts}
         onNavigate={onNavigate}
       />
@@ -165,27 +165,27 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <p>Soluciones para tu estudio, tu reportaje o tu proyecto basado en Cuba.</p>
           </div>
           <div className="service-cards">
-            <ServiceCard 
-              image="/images/service/informa.png" 
-              eyebrow="Para periodistas" 
+            <ServiceCard
+              image="/images/service/informa.png"
+              eyebrow="Para periodistas"
               title="Prensa y medios de comunicación"
               ctaText="INFORMA CON CUBADATA"
               href=""
             >
               Cubadata pone a disposición de periodistas y comunicadores herramientas ágiles para sondear los estados de opinión en la Isla.
             </ServiceCard>
-            <ServiceCard 
-              image="/images/service/investiga.png" 
-              eyebrow="Para estudiosos" 
+            <ServiceCard
+              image="/images/service/investiga.png"
+              eyebrow="Para estudiosos"
               title="Universidades y centros de investigación"
               ctaText="INVESTIGA CON CUBADATA"
               href=""
             >
               ¿Desarrollas una investigación sobre la actualidad cubana? Accede a datos verificables y validados científicamente.
             </ServiceCard>
-            <ServiceCard 
-              image="/images/service/proyecta.png" 
-              eyebrow="Para implementadores" 
+            <ServiceCard
+              image="/images/service/proyecta.png"
+              eyebrow="Para implementadores"
               title="Organizaciones privadas y sociedad civil"
               ctaText="PROYECTA CON CUBADATA"
               href=""
@@ -327,8 +327,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="stats-header">
             <h2>Una tecnología que se adapta</h2>
             <p>
-              Adaptando las nuevas tecnologías a las circunstancias de la Isla, con énfasis en la seguridad informática, 
-              llegamos a los ciudadanos de manera directa a través de aplicaciones de comunicación en línea, 
+              Adaptando las nuevas tecnologías a las circunstancias de la Isla, con énfasis en la seguridad informática,
+              llegamos a los ciudadanos de manera directa a través de aplicaciones de comunicación en línea,
               utilizando los estándares de encriptación más modernos.
             </p>
           </div>
