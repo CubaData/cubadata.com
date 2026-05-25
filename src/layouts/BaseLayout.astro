@@ -25,7 +25,7 @@ const {
   type = 'website',
 } = Astro.props
 
-const site = Astro.site ?? new URL('https://cubadata.com')
+const site = Astro.site ?? new URL('https://datacuba.com')
 const canonical = new URL(canonicalPath, site).toString()
 const imageUrl = new URL(image, site).toString()
 ---
