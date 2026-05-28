@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 import { getEncuestas } from '../../data'
 import { EncuestaPage } from '../../components/pages/EncuestaPage'
 
+import { NotFoundPage } from '../../components/pages/NotFoundPage'
+
 export function getStaticPaths() {
   return getEncuestas().map((encuesta) => ({
     params: { slug: encuesta.slug },
@@ -11,6 +13,12 @@ export function getStaticPaths() {
 }
 
 const { encuesta } = Astro.props
+
+// Si la encuesta no existe o está deshabilitada en esta compilación
+if (!encuesta) {
+  return Astro.redirect('/404');
+}
+
 const keywords = [
   'Cubadata',
   'Cuba',

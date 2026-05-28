@@ -95,9 +95,18 @@ def _parse_list(s: str) -> list[str]:
     return parts
 
 
+def _parse_boolean(v) -> bool:
+    if isinstance(v, bool):
+        return v
+    s = str(v).strip().lower()
+    if s in ("true", "1", "yes", "verdadero", "si", "sí", "checked"):
+        return True
+    return False
+
+
 def coerce_field(name: str, raw, typ: str, *, row_label: str):
     if _cell_empty(raw):
-        return None
+        return False if typ == "boolean" else None
     try:
         if typ == "string":
             return str(raw).strip()
@@ -110,6 +119,8 @@ def coerce_field(name: str, raw, typ: str, *, row_label: str):
         if typ == "list":
             lst = _parse_list(str(raw))
             return lst if lst else None
+        if typ == "boolean":
+            return _parse_boolean(raw)
     except ValueError as e:
         raise ValueError(f"{row_label} field {name!r} ({typ}): {e}") from e
     raise ValueError(f"{row_label} field {name!r}: unknown type {typ!r}")
@@ -117,10 +128,25 @@ def coerce_field(name: str, raw, typ: str, *, row_label: str):
 
 def tab_to_records(df: pd.DataFrame, fields: list[tuple[str, str]], *, tab_gid) -> list[dict]:
     rows_out: list[dict] = []
+    has_published_col = any(name == "published" for name, _ in fields)
+    
     for i, row in df.iterrows():
         row_label = f"tab gid={tab_gid} data row {i + 2}"
+        
+        # If 'published' exists as a column in sheet, we can filter early
+        if has_published_col and "published" in df.columns:
+            raw_pub = row["published"]
+            is_pub = _parse_boolean(raw_pub) if not _cell_empty(raw_pub) else False
+            if not is_pub:
+                continue
+
         record = {}
         for name, typ in fields:
+            # We don't necessarily want 'published' in the final json records if it is only for filtering
+            # But let's keep it or filter it out. Let's filter it out of the final JSON to keep output clean,
+            # or keep it if they want. Let's keep it or omit it. Let's omit it so it doesn't pollute the json!
+            if name == "published":
+                continue
             if name not in df.columns:
                 record[name] = None
                 continue

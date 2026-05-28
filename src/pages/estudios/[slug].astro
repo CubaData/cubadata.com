@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 import { getEstudios } from '../../data'
 import { EstudioPage } from '../../components/pages/EstudioPage'
 
+import { NotFoundPage } from '../../components/pages/NotFoundPage'
+
 export function getStaticPaths() {
   return getEstudios().map((estudio) => ({
     params: { slug: estudio.slug },
@@ -11,6 +13,12 @@ export function getStaticPaths() {
 }
 
 const { estudio } = Astro.props
+
+// Si el estudio no existe o está deshabilitado en esta compilación
+if (!estudio) {
+  return Astro.redirect('/404');
+}
+
 const keywords = [
   'Cubadata',
   'Cuba',

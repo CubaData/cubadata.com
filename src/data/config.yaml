@@ -15,6 +15,7 @@ tabs:
   - keywords: list
   - excerpt: string
   - summary: string
+  - published: boolean
 - gid: 614182962
   export: estudios.json
   fields:
@@ -29,6 +30,7 @@ tabs:
   - keywords: list
   - excerpt: string
   - summary: string
+  - published: boolean
 - gid: 2028291692
   export: series.json
   fields:

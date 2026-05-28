@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 import { getArticles } from '../../data'
 import { ArticlePage } from '../../components/pages/ArticlePage'
 
+import { NotFoundPage } from '../../components/pages/NotFoundPage'
+
 export function getStaticPaths() {
   return getArticles().map((article) => ({
     params: { slug: article.slug },
@@ -11,6 +13,12 @@ export function getStaticPaths() {
 }
 
 const { article } = Astro.props
+
+// Si el artículo no existe o está deshabilitado en esta compilación
+if (!article) {
+  return Astro.redirect('/404');
+}
+
 const keywords = [
   'Cubadata',
   'Cuba',
