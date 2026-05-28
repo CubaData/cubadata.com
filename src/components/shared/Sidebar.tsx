@@ -72,8 +72,8 @@ export function Sidebar({ onNavigate, isSurvey, isArticle, serie }: SidebarProps
   return (
     <aside className="sidebar modern-sidebar">
       {serie && seriesItems.length > 0 && (
-        <div className="sidebar-card">
-          <h3>{serie.replaceAll('-', ' ').toUpperCase()}</h3>
+        <div className="sidebar-card mb-4" style={{ marginBottom: '24px' }}>
+          <h3>{serie.replaceAll('-', ' ').replace(/\b\w/g, c => c.toUpperCase())}</h3>
           {seriesItems.map(({ slug, title, pdf, dateRaw, isSurvey: itemIsSurvey }) => (
             <article key={slug} className="sidebar-article">
               <h4>

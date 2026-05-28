@@ -1422,9 +1422,17 @@
   border-left: 8px solid #31269c;
 }
 
+.share-btn:not(.share-main) {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  justify-content: center;
+  border-radius: 50%;
+}
+
 .share-btn.facebook,
 .share-btn.twitter,
-.share-btn.pinterest,
+.share-btn.instagram,
 .share-btn.whatsapp { 
   background-color: #7d8ba1; 
 }

@@ -19,7 +19,7 @@ const {
   title,
   description,
   keywords = [],
-  image = '/images/logo/social-card.png',
+  image = '/images/cubadata.png',
   canonicalPath = Astro.url.pathname,
   activePage = Astro.url.pathname.replace(/\/$/, '') || '/',
   type = 'website',
@@ -27,7 +27,7 @@ const {
 
 const site = Astro.site ?? new URL('https://datacuba.com')
 const canonical = new URL(canonicalPath, site).toString()
-const imageUrl = new URL(image, site).toString()
+const imageUrl = image.startsWith('http') ? image : new URL(image, site).toString()
 ---
 
 <!doctype html>
