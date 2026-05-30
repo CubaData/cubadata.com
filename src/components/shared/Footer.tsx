@@ -36,7 +36,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </svg>
               <span>+1 305 457 1656</span>
             </a>
-            <a href="https://ai.datacuba.com" target="_blank" rel="noreferrer" className="footer-link-item">
+            <a href="https://ai.cubadata.com" target="_blank" rel="noreferrer" className="footer-link-item">
               <FontAwesomeIcon icon={faRobot} className="footer-icon" />
               <span>Cubadata AI</span>
             </a>

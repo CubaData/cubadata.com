@@ -8,7 +8,7 @@ const navItems = [
   { label: 'Encuestas', href: '/encuestas' },
   { label: 'Estudios', href: '/estudios' },
   { label: 'Sobre nosotros', href: '/quienes-somos' },
-  { label: 'AI', href: 'https://ai.datacuba.com/', target: '_blank', icon: faRobot },
+  { label: 'AI', href: 'https://ai.cubadata.com/', target: '_blank', icon: faRobot },
 ]
 
 type HeaderProps = {
