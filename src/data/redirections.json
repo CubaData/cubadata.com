@@ -170,5 +170,41 @@
   {
     "from": "/que-hay-detras-de-la-intencion-de-voto-del-electorado-cubano/",
     "to": "/estudios/intencion-voto-electorado-cuba/"
+  },
+  {
+    "from": "/en/",
+    "to": "/"
+  },
+  {
+    "from": "/es/",
+    "to": "/"
+  },
+  {
+    "from": "/fr/",
+    "to": "/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2021-estudio-inseguridad-alimentaria/index.html",
+    "to": "/estudios/inseguridad-alimentaria-violencia-genero-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2022-estudio-libertad-expresion-cuba/index.html",
+    "to": "/estudios/libertad-expresion-mayoria-silenciada-cuba/"
+  },
+  {
+    "from": "/surveys/electoral",
+    "to": "/encuestas/participacion-electoral-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2023-estudio-economia-informal/index_60.html",
+    "to": "/estudios/economia-informal-inseguridad-alimentaria-cuba/"
+  },
+  {
+    "from": "/files/cubaData.apk",
+    "to": "/"
+  },
+  {
+    "from": "/chronology/2004/2004-12-December-Cuba-Chronology All News.doc",
+    "to": "/encuestas/"
   }
 ]
