@@ -13,7 +13,7 @@ for (const redir of redirections) {
 }
 
 export default defineConfig({
-  site: 'https://datacuba.com',
+  site: 'https://cubadata.com',
   integrations: [react(), sitemap()],
   output: 'static',
   redirects,

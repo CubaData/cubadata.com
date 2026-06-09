@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://datacuba.com/sitemap-index.xml
+Sitemap: https://cubadata.com/sitemap-index.xml
