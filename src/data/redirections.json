@@ -206,5 +206,145 @@
   {
     "from": "/chronology/2004/2004-12-December-Cuba-Chronology All News.doc",
     "to": "/encuestas/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2021-estudio-inseguridad-alimentaria/index_30.html",
+    "to": "/estudios/inseguridad-alimentaria-violencia-genero-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2023-estudio-economia-informal/index.html",
+    "to": "/estudios/economia-informal-inseguridad-alimentaria-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2020_encuesta-inseguridad-alimentaria/index.html",
+    "to": "/encuestas/seguridad-alimentaria-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2023-estudio-igualdad-genero-participacion-mujeres/index.html",
+    "to": "/estudios/igualdad-genero-participacion-mujeres-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2023-encuesta-migracion/index.html",
+    "to": "/encuestas/salida-pais-migracion-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2023-encuesta-protestas-cuba/index.html",
+    "to": "/encuestas/protestas-civiles-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2019-estudio-mujeres-y-politica/index_20.html",
+    "to": "/estudios/participacion-politica-mujeres-genero-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2019-estudio-mujeres-y-politica/index.html",
+    "to": "/estudios/participacion-politica-mujeres-genero-cuba/"
+  },
+  {
+    "from": "/category/encuestas/page/3/",
+    "to": "/encuestas/"
+  },
+  {
+    "from": "/category/estudios/page/2/",
+    "to": "/estudios/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2023-encuesta-alianza-cuba-rusia/index.html",
+    "to": "/encuestas/alianza-cuba-rusia/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2022-encuestas-panel-multidimensional/05-salud-integral/index.html",
+    "to": "/encuestas/salud-integral-legitimidad-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2022-encuestas-panel-multidimensional/04-seguridad-alimentaria/index.html",
+    "to": "/encuestas/seguridad-alimentaria-legitimidad-politica-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2022-encuestas-panel-multidimensional/08-cuidado-domestico/index.html",
+    "to": "/encuestas/cuidado-domestico-legitimidad-politica-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2023-encuestas-panel-multidimensional/04-diaspora/index.html",
+    "to": "/encuestas/diaspora-legitimidad-politica-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2023-encuestas-panel-multidimensional/02-emprendimiento/index.html",
+    "to": "/encuestas/emprendimiento-valores-legitimidad-politica-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2023-tercera-encuesta-economica-trimestral/index.html",
+    "to": "/encuestas/economica-trimestral-cuba-iii/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2023-segunda-encuesta-economica-trimestral/index.html",
+    "to": "/encuestas/economica-trimestral-cuba-ii/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2024-estudio-segundo-panel-multidimensional-cuba/index.html",
+    "to": "/estudios/futuro-democratizacion-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2024-encuesta-protestas-civiles/index.html",
+    "to": "/encuestas/protestas-civiles-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2023-estudio-primer-panel-multidimensional-cuba/index.html",
+    "to": "/estudios/politica-derechos-calidad-vida-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2023-encuesta-participacion-electoral/index.html",
+    "to": "/encuestas/participacion-electoral-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2021-encuesta-participacion-gobernabilidad/index.html",
+    "to": "/encuestas/participacion-ciudadana-gobernabilidad-cuba/"
+  },
+  {
+    "from": "/wp-content/publicaciones/2018-encuesta-opinion-gobierno/index.html",
+    "to": "/encuestas/100-dias-gobierno-diaz-canel-cuba/"
+  },
+  {
+    "from": "/wp-content/uploads/2026/04/Condiciones-de-vida-servicios-seguridad-y-ajuste-cotidiano-graficas.pdf",
+    "to": "/encuestas/condicion-vida-servicios-seguridad-cuba/"
+  },
+  {
+    "from": "/wp-content/uploads/2026/02/",
+    "to": "/"
+  },
+  {
+    "from": "/en/reports/",
+    "to": "/"
+  },
+  {
+    "from": "/wp-includes/js/wp-emoji-release.min.js",
+    "to": "/"
+  },
+  {
+    "from": "/cdn-cgi/l/email-protection",
+    "to": "/"
+  },
+  {
+    "from": "/wp-admin/*",
+    "to": "/"
+  },
+  {
+    "from": "/wp-content/plugins/*",
+    "to": "/"
+  },
+  {
+    "from": "/wp-content/themes/Newspaper/*",
+    "to": "/"
+  },
+  {
+    "from": "/wp-content/uploads/*",
+    "to": "/"
+  },
+  {
+    "from": "/wp-content/*",
+    "to": "/"
+  },
+  {
+    "from": "/wp-.php",
+    "to": "/"
   }
 ]
