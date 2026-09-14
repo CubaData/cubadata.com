@@ -1,5 +1,43 @@
 [
   {
+    "slug": "elasticidad-desesperanza-cuba",
+    "date": "2026-08",
+    "title": "La elasticidad de la desesperanza",
+    "serie": "panel-multidimensional-cuba-iii",
+    "isbn": "979-8-90589-059-8",
+    "authors": [
+      "Dr. Arístides A. Vara-Horna",
+      "Mg. Salvador Pascual",
+      "Mg. Karla Velásquez Figuera"
+    ],
+    "pdf": "https://drive.google.com/file/d/1F_eq7hdoWmlo8H31XxzwO6CsE_SZX1e2/view?usp=sharing",
+    "image": "https://drive.google.com/thumbnail?id=1BCN78-4daVu2qMN25Z4idfrERNq_tDvB&sz=w500",
+    "keywords": [
+      "la elasticidad de la desesperanza",
+      "agencia y retirada",
+      "cuba conectada",
+      "cubadata",
+      "silencio cívico",
+      "autocensura",
+      "costo expresivo",
+      "falsificación de preferencias",
+      "espiral del silencio",
+      "libertad de expresión en cuba",
+      "crisis material",
+      "resiliencia democrática",
+      "disidencia latente",
+      "panel longitudinal",
+      "preferencias sensibles",
+      "administración del riesgo expresivo",
+      "indefensión aprendida",
+      "voz protegida",
+      "ciudadanía conectada",
+      "venezuela como espejo afectivo"
+    ],
+    "excerpt": "Un estudio de CubaData sobre cómo la desesperanza en Cuba se contrae en autocensura y se estira en agencia protegida, voz anónima y acción de bajo riesgo.",
+    "summary": "Esta publicación inaugura la línea de estudios de CubaData dedicada a comprender la desesperanza no como un estado emocional fijo, sino como una relación social que se contrae y se estira según el costo de hablar. El trabajo se apoya en una trayectoria previa de investigaciones de CubaData sobre libertad de expresión, mayoría silenciada, legitimidad, derechos y futuros posibles de democratización, y dialoga directamente con el antecedente conceptual más cercano, Más allá del miedo, que ya había mostrado que la ausencia de protesta abierta en Cuba convive con disidencia latente, indignación y formas discretas de agencia.\n\nEl volumen avanza sobre esa base con una pregunta más precisa: qué ocurre con la agencia ciudadana cuando la expectativa de cambio se debilita bajo presión material y vigilancia sostenida. Para responderla, articula cuatro fuentes de evidencia —dos Pulsos de medición ágil, un Foco de diseño experimental multi-brazo y un panel longitudinal de 1.304 personas— que permiten observar, con matices, cómo se relacionan el clima afectivo, la crisis material, el silencio cívico y las preferencias de cambio dentro de la ciudadanía cubana conectada captada por CubaData.\n\nEsta primera entrega dentro del proyecto CubaData-DDC es producto de una alianza institucional entre Diario de Cuba, CubaData y la Universidad de San Martín de Porres (USMP), que aportó la dirección académica, el diseño metodológico y los estándares de rigor necesarios para convertir la evidencia recogida en un análisis trazable y verificable.\n\nEl libro ha sido escrito para un público amplio —periodistas, investigadores, organizaciones de sociedad civil y tomadores de decisión— sin renunciar al rigor técnico: cada capítulo distingue con cuidado fuente, universo, denominador y límite de cada resultado, para evitar que una encuesta digital se lea como retrato probabilístico nacional o que el silencio se interprete automáticamente como apoyo o como oposición.\n\nSu hallazgo central puede resumirse en una idea deliberadamente sobria: bajo costos expresivos altos, la desesperanza no solo retira, también se desplaza. Se contrae hacia la autocensura y la retirada pública, pero al mismo tiempo se estira hacia formas protegidas de agencia —ayuda cotidiana, conversación privada, expresión anónima, preferencias sensibles de cambio—. El libro llama a esa disposición \"elasticidad\" precisamente porque no es optimismo ni resignación, sino una forma de observar cómo una misma desesperanza puede reorganizar la voz sin eliminarla.\n\nA partir de esa tesis, la publicación propone cinco cambios de lectura: dejar de confundir silencio con apoyo, distinguir retirada de apatía, leer la crisis material como condición de la voz y no solo como contexto, tratar la forma de preguntar como parte de la medición del miedo, y separar el deseo de cambio de la capacidad y la acción. Estos cambios tienen implicancias directas para el periodismo, que debe evitar titular desde un solo denominador; para la sociedad civil, que debe valorar sin romantizar las formas de agencia segura; y para la investigación, que debe separar fuentes, olas y universos antes de comparar cifras.\n\nEl libro cierra sin ofrecer una imagen cómoda: la ciudadanía cubana conectada no aparece como una sociedad muda ni como una sociedad libre para hablar. Aparece como una sociedad que calcula cuándo, dónde y cómo puede hacerlo, que se retrae frente a la exposición pública, pero que conserva prácticas de sostén, expresión protegida y preferencia sensible. Esa administración cotidiana del riesgo expresivo es, según sus autores, la elasticidad de la desesperanza que este libro propone observar."
+  },
+  {
     "slug": "miedo-campanas-presos-resiliencia-cuba",
     "date": "2026-05",
     "title": "Desafiando el miedo. Campañas digitales, presos políticos y resiliencia democrática en Cuba. Evidencia experimental del Panel 3 de CubaData",
@@ -38,17 +76,17 @@
   },
   {
     "slug": "dinamicas-actividad-no-estatal-cuba",
-    "date": "2026-04",
+    "date": "2026-08",
     "title": "Dinámicas de la actividad no estatal en Cuba: 2026",
     "serie": null,
-    "isbn": null,
+    "isbn": "979-8-90589-006-2",
     "authors": [
       "Dr. Arístides A. Vara-Horna",
       "Mg. Salvador Pascual",
       "Mg. Karla Velásquez Figuera"
     ],
     "pdf": "https://drive.google.com/file/d/1zz-yZrVkPdDlrYog-L3yLMv9XFW7qgCs/view?usp=sharing",
-    "image": "https://drive.google.com/thumbnail?id=1gvW4WSB___IZ3VbCOYE-a-M9v1eyeqPs&sz=w500",
+    "image": "https://drive.google.com/thumbnail?id=1UdLDDUXgeYostMN_CI4Cm8jpl5IwM9SM&sz=w500",
     "keywords": [
       "actividad no estatal cuba 2026",
       "sector privado cuba",
